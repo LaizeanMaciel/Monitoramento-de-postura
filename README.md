@@ -29,8 +29,8 @@ Este projeto tem como objetivo desenvolver um sistema de monitoramento de postur
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
 
   <img src="images/01.jpg" alt="Imagem 1" width="200"/>
-  <img src="Monitoramento-de-postura/images/02.jpg" alt="Imagem 2" width="200"/>
-  <img src="link-para-imagem3.png" alt="Imagem 3" width="200"/>
-  <img src="link-para-imagem4.png" alt="Imagem 4" width="200"/>
+  <img src="images/02.jpg" alt="Imagem 2" width="200"/>
+  <img src="images/03.jpg" alt="Imagem 3" width="200"/>
+  <img src="images/04.jpg" alt="Imagem 4" width="200"/>
 
 </div>

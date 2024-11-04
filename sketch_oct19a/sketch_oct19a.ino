@@ -6,12 +6,14 @@
 MPU6050 mpu;
 
 int buzzer = 7;
+const int sensorPin = 4; // Pino do sensor de inclinação
 
 // Inicializa a comunicação Bluetooth
 SoftwareSerial BTSerial(10, 11); // RX, TX para o módulo Bluetooth
 
 void setup() {
   pinMode(buzzer, OUTPUT);
+  pinMode(sensorPin, INPUT); // Configura o pino do sensor de inclinação como entrada
   Serial.begin(9600);  // Inicializa a comunicação serial para o monitor
   BTSerial.begin(9600); // Inicializa o módulo Bluetooth
 
@@ -39,6 +41,14 @@ void loop() {
   Serial.print("Inclinação X: "); Serial.print(angleX);
   Serial.print(" | Inclinação Y: "); Serial.println(angleY);
   
+  // Verifica o estado do sensor de inclinação
+  int sensorState = digitalRead(sensorPin); // Lê o estado do sensor de inclinação
+  if (sensorState == HIGH) {
+    Serial.println("Sensor de Inclinação: Ativado (Inclinado)");
+  } else {
+    Serial.println("Sensor de Inclinação: Desativado (Na posição correta)");
+  }
+  
   // Define limites para postura correta
   // Ajuste os limites conforme necessário
   if (angleX < -15 || angleX > 15 || angleY < -15 || angleY > 15) {
@@ -54,4 +64,5 @@ void loop() {
   
   delay(1000);  // Aguarda um segundo entre as leituras
 }
+
 
